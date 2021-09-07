@@ -1,0 +1,1 @@
+Hi This is a CLI App game where we test your footballing knowledge. Open the link and click on run to play the game.
