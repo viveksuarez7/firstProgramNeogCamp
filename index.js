@@ -1,22 +1,23 @@
 //Objects
 
 var readlineSync = require('readline-sync');
+const chalk = require('chalk');
 var score = 0;
-var userName = readlineSync.question('Hi what is your name ? ');
-console.log('Hi ' + userName + ' lets have a football quiz !');
+var userName = readlineSync.question(chalk.blue('Hi what is your name ? '));
+console.log(chalk.yellow('Hi ' + userName + ' lets have a football quiz !'));
 
 function play(question,answer){
   var userAns = readlineSync.question(question);
   if(userAns.toLowerCase()===answer.toLowerCase()){
-    console.log('You are correct');
+    console.log(chalk.green('You are correct'));
     score++;
-    console.log('Your Score is '+ score);
+    console.log(chalk.magenta('Your Score is '+ score));
     console.log('----------------------------')
   }
   else{
-    console.log('No you are wrong');
+    console.log(chalk.red('No you are wrong'));
     score--;
-    console.log('Your score is '+score);
+    console.log(chalk.magenta('Your score is '+score));
     console.log('----------------------------')
   }
 }
@@ -54,14 +55,14 @@ for(var i=0;i<questionArr.length;i++){
   play(questionArr[i].question,questionArr[i].answer)
 }
 
-console.log('You win your overall Score is ' + score);
+console.log(chalk.green('You win your overall Score is ' + score));
 
 
-console.log('High Scores are : ');
+console.log(chalk.bold('High Scores are : '));
 for(var i=0;i<highScore.length;i++){
-  console.log(highScore[i].name,highScore[i].score);
+  console.log(chalk.yellow(highScore[i].name,highScore[i].score));
 }
 
 if(score>=highScore[0].score){
-  console.log('Congrats ' + userName + ' You have made the highScore contact me so that i can add You to the list 💥');
+  console.log(chalk.bgCyan('Congrats ' + userName + ' You have made the highScore contact me so that i can add You to the list 💥'));
 }
