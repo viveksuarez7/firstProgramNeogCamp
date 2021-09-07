@@ -61,3 +61,7 @@ console.log('High Scores are : ');
 for(var i=0;i<highScore.length;i++){
   console.log(highScore[i].name,highScore[i].score);
 }
+
+if(score>=highScore[0].score){
+  console.log('Congrats' + userName + ' You have made the highScore contact me so that i can add You to the list 💥');
+}
