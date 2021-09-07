@@ -7,7 +7,7 @@ console.log('Hi ' + userName + ' lets have a football quiz !');
 
 function play(question,answer){
   var userAns = readlineSync.question(question);
-  if(userAns===answer){
+  if(userAns.toLowerCase()===answer.toLowerCase()){
     console.log('You are correct');
     score++;
     console.log('Your Score is '+ score);
@@ -63,5 +63,5 @@ for(var i=0;i<highScore.length;i++){
 }
 
 if(score>=highScore[0].score){
-  console.log('Congrats' + userName + ' You have made the highScore contact me so that i can add You to the list 💥');
+  console.log('Congrats ' + userName + ' You have made the highScore contact me so that i can add You to the list 💥');
 }
